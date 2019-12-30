@@ -30,7 +30,7 @@
      # &&  wget http://download.eclipse.org/technology/epp/downloads/release/neon/2/eclipse-java-neon-2-linux-gtk-x86_64.tar.gz
  
  RUN     cd /tmp \
-     &&  tar xvf eclipse-java-neon-2-linux-gtk-x86_64.tar.gz \
+     &&  tar xvf eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz \
      &&  mv eclipse /opt \
      &&  rm -R eclipse* \
      &&  desktop-file-install /usr/share/applications/eclipse.desktop \
