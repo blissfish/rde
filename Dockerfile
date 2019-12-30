@@ -27,8 +27,7 @@
  
  RUN     cd /tmp \
      &&  wget http://download.eclipse.org/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz
-     # &&  wget http://download.eclipse.org/technology/epp/downloads/release/neon/2/eclipse-java-neon-2-linux-gtk-x86_64.tar.gz
- 
+
  RUN     cd /tmp \
      &&  tar xvf eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz \
      &&  mv eclipse /opt \
