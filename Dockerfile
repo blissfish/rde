@@ -1,7 +1,7 @@
  # BUILD: sudo docker build -t eclipse-java-vnc .
  # TEST RUN: sudo docker run -it --rm -d -p5901:5901 --name eclipse eclipse-java-vnc
  
- FROM ubuntu:16.04
+ FROM ubuntu:18.04
  
  LABEL maintainer "@Blissfish"
  LABEL description "Eclipse on Ubuntu over VNC"
