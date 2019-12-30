@@ -1,7 +1,7 @@
  # BUILD: sudo docker build -t eclipse-java-vnc .
  # TEST RUN: sudo docker run -it --rm -d -p5901:5901 --name eclipse eclipse-java-vnc
  
- FROM ubuntu:18.04
+ FROM ubuntu:16.04
  
  LABEL maintainer "@Blissfish"
  LABEL description "Eclipse on Ubuntu over VNC"
@@ -26,7 +26,8 @@
  COPY eclipse.desktop /usr/share/applications/eclipse.desktop
  
  RUN     cd /tmp \
-     &&  wget http://download.eclipse.org/technology/epp/downloads/release/neon/2/eclipse-java-neon-2-linux-gtk-x86_64.tar.gz
+     &&  wget http://download.eclipse.org/technology/epp/downloads/release/2019-12/R/eclipse-java-2019-12-R-linux-gtk-x86_64.tar.gz
+     # &&  wget http://download.eclipse.org/technology/epp/downloads/release/neon/2/eclipse-java-neon-2-linux-gtk-x86_64.tar.gz
  
  RUN     cd /tmp \
      &&  tar xvf eclipse-java-neon-2-linux-gtk-x86_64.tar.gz \
