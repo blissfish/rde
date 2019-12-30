@@ -24,7 +24,7 @@
          wget \
          unzip \
          curl \
-         bash-completion && \         
+         bash-completion \         
          software-properties-common \
          tightvncserver \
          default-jre \
