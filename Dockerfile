@@ -27,7 +27,7 @@
          bash-completion \         
          software-properties-common \
          tightvncserver \
-         default-jre
+         git
  
  # install eclipse (use --no-install-recommends to avoid installing OpenJDK)
  COPY eclipse.desktop /usr/share/applications/eclipse.desktop
