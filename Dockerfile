@@ -54,8 +54,13 @@
      &&  mv apache-maven-3.3.9 maven \
      &&  mv maven /opt \
      &&  rm -R apache* \
-     &&  chmod +x /etc/profile.d/mavenenv.sh \
-     &&  source /etc/profile.d/mavenenv.sh
+     && export M2_HOME=/opt/maven \
+     && export PATH=${M2_HOME}/bin:${PATH} \
+     &&  cd /usr/local/bin \
+     &&  ln -s /opt/maven/bin/mvn
+
+     #&&  chmod +x /etc/profile.d/mavenenv.sh \
+     #&&  source /etc/profile.d/mavenenv.sh
      
  # set some labels so users can easily find the VNC access details
  ENV VNC_PASSWORD=eclipse
