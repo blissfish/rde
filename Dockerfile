@@ -1,5 +1,5 @@
- # BUILD: sudo docker build -t eclipse-java-vnc .
- # TEST RUN: sudo docker run -it --rm -d -p5901:5901 --name eclipse eclipse-java-vnc
+ # BUILD: sudo docker build -t eclipse-vnc .
+ # TEST RUN: sudo docker run -it --rm -d -p5901:5901 --name eclipse eclipse-vnc
  
  FROM ubuntu:16.04
  
@@ -43,6 +43,20 @@
      &&  cd /usr/local/bin \
      &&  ln -s /opt/eclipse/eclipse
  
+ # Maven installation
+ COPY mavenenv.sh /etc/profile.d/mavenenv.sh
+ 
+ RUN     cd /tmp \
+     && wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+     
+ RUN     cd /tmp \
+     &&  tar -xvzf apache-maven-3.3.9-bin.tar.gz \
+     &&  mv apache-maven-3.3.9 maven \
+     &&  mv maven /opt \
+     &&  rm -R apache* \
+     &&  chmod +x /etc/profile.d/mavenenv.sh \
+     &&  source /etc/profile.d/mavenenv.sh
+     
  # set some labels so users can easily find the VNC access details
  ENV VNC_PASSWORD=eclipse
  ENV VNC_RESOLUTION=1024x768
