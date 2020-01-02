@@ -75,8 +75,13 @@
  # expose our VNC port
  EXPOSE 5901
  
+ EXPOSE 8080
+ 
  # set our volume
  VOLUME /home
+ 
+  RUN     cd /home \
+     &&  git clone https://github.com/blissfish/spring-boot-sample-service.git
  
  # start our vncserver
 ENTRYPOINT ["./startup.sh"]
